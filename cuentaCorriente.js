@@ -25,26 +25,5 @@ export class cuentaCorriente
         cuentaCorriente.numeroDeCuentas++;
     }
 
-    depositoEnCuenta(valor){
-        if(valor > 0){
-            this.#saldo += valor;
-        }
-        return this.#saldo
-    }
     
-    retirarDeCuenta(valor){
-        if(valor <= this.#saldo){
-            this.#saldo -= valor;
-        }
-        return this.#saldo;
-    }
-    consultarSaldo(){
-        return this.#saldo;
-    }
-
-    transferirDinero(valor,cuentaDestino){
-        this.retirarDeCuenta(valor);
-        cuentaDestino.depositoEnCuenta(valor);
-    }
-
 }
