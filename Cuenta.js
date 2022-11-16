@@ -1,11 +1,9 @@
 export class Cuenta 
 {
-    
     #cliente;
     #saldo;
     numero;
     agencia;
-    cliente;
 
     set cliente(valor){
         if(valor instanceof Cliente){
@@ -33,7 +31,7 @@ export class Cuenta
     }
 
     retirarDeCuenta(valor){
-        _retirarDeCuenta(valor, 0);
+        throw new Error(`El método retirarDeCuenta de la clase Cuenta es abstracto y debe ser implementado en las clases hijas`);
     }
 
     _retirarDeCuenta(valor, comision){
