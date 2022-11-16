@@ -1,8 +1,12 @@
 export class Cuenta 
 {
+    
     #cliente;
     #saldo;
-    
+    numero;
+    agencia;
+    cliente;
+
     set cliente(valor){
         if(valor instanceof Cliente){
             this.#cliente = valor;
@@ -13,6 +17,9 @@ export class Cuenta
     }
 
     constructor (cliente, numero, agencia, saldo){
+        if (this.constructor == Cuenta) {
+            throw new Error(`No se debe instanciar objetos de la clase Cuenta`)
+        }
         this.#cliente = cliente;
         this.#saldo = saldo;
         this.numero = numero;
