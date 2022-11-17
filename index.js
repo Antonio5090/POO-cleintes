@@ -8,6 +8,7 @@ import { Empleado } from "./Empleados/Empleado.js";
 import { SistemadeAutenticacion } from "./Empleados/SistemadeAutenticacion.js";
 
 const cliente1 = new Cliente("Juan", "12345678", "12345678-9");
+cliente1.asignarClave('545454')
 const cliente2 = new Cliente("Pedro", "245648", "161819-6");
 
 const cuentaJuan = new CuentaCorriente(cliente1, "1", "001");
@@ -22,7 +23,7 @@ empleadoJuan.asignarClave('12345678')
 const gerentePedro = new Gerente('Pedro Rosales', '877878', 2500);
 const directorAntonio = new Director('Antonio Aguilera', '509069', 4000);
 
-
+console.log(SistemadeAutenticacion.login(cliente1, '545454'));
 console.log(SistemadeAutenticacion.login(empleadoJuan, '12345678'));
 
 /* console.log(empleadoJuan.verBonificacion());

@@ -14,8 +14,8 @@ export class Empleado {
     asignarClave(clave) {
         this.#clave = clave;
     }
-    get clave(){
-        return this.#clave;
+    esAutenticable(clave){
+        return clave === this.#clave;
     }
 
     verBonificacion(){
